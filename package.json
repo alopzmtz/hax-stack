@@ -1,9 +1,10 @@
 {
   "name": "hax-stack",
   "type": "module",
-  "license": "MIT"
+  "license": "MIT",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
@@ -13,8 +14,10 @@
     "luxon": "^3.5.0"
   },
   "devDependencies": {
+    "@hono/vite-dev-server": "^0.17.0",
     "@types/luxon": "^3.4.2",
     "@types/node": "^20.11.17",
-    "tsx": "^4.7.1"
+    "tsx": "^4.7.1",
+    "vite": "^5.4.11"
   }
 }
