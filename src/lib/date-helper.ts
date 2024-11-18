@@ -1,4 +1,5 @@
-import { DateTime, Duration } from 'luxon'
+import { DateTime, } from 'luxon'
+import type { Duration } from 'luxon';
 
 export class DateHelper {
   // Format dates to strings
