@@ -11,12 +11,18 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.7
         version: 1.13.7(hono@4.6.10)
+      alpinejs:
+        specifier: ^3.14.3
+        version: 3.14.3
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
       hono:
         specifier: ^4.6.10
         version: 4.6.10
+      htmx:
+        specifier: ^0.0.2
+        version: 0.0.2
       luxon:
         specifier: ^3.5.0
         version: 3.5.0
@@ -27,6 +33,9 @@ importers:
       '@hono/vite-dev-server':
         specifier: ^0.17.0
         version: 0.17.0(hono@4.6.10)
+      '@types/alpinejs':
+        specifier: ^3.13.10
+        version: 3.13.10
       '@types/luxon':
         specifier: ^3.4.2
         version: 3.4.2
@@ -439,6 +448,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@types/alpinejs@3.13.10':
+    resolution: {integrity: sha512-ah53tF6mWuuwerpDE7EHwbZErNDJQlsLISPqJhYj2RZ9nuTYbRknSkqebUd3igkhLIZKkPa7IiXjSn9qsU9O2w==}
+
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
@@ -447,6 +459,15 @@ packages:
 
   '@types/node@20.17.6':
     resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
+
+  '@vue/reactivity@3.1.5':
+    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
+
+  '@vue/shared@3.1.5':
+    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
+
+  alpinejs@3.14.3:
+    resolution: {integrity: sha512-cL8JBEDAm4UeVjTN5QnFl8QgMGUwxFn1GvQvu3RtfAHUrAPRahGihrsWpKnEK9L0QMqsAPk/R8MylMWKHaK33A==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -479,6 +500,10 @@ packages:
   hono@4.6.10:
     resolution: {integrity: sha512-IXXNfRAZEahFnWBhUUlqKEGF9upeE6hZoRZszvNkyAz/CYp+iVbxm3viMvStlagRJohjlBRGOQ7f4jfcV0XMGg==}
     engines: {node: '>=16.9.0'}
+
+  htmx@0.0.2:
+    resolution: {integrity: sha512-FfUo3ynRYr6Ra4vqmS4Nq9g47607FSmvHYCOuU8bvbW8s4kPMhAmCbMBjuW2cEZI6DauaFNZKinfgV91cc9Feg==}
+    hasBin: true
 
   luxon@3.5.0:
     resolution: {integrity: sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ==}
@@ -762,6 +787,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.27.2':
     optional: true
 
+  '@types/alpinejs@3.13.10': {}
+
   '@types/estree@1.0.6': {}
 
   '@types/luxon@3.4.2': {}
@@ -769,6 +796,16 @@ snapshots:
   '@types/node@20.17.6':
     dependencies:
       undici-types: 6.19.8
+
+  '@vue/reactivity@3.1.5':
+    dependencies:
+      '@vue/shared': 3.1.5
+
+  '@vue/shared@3.1.5': {}
+
+  alpinejs@3.14.3:
+    dependencies:
+      '@vue/reactivity': 3.1.5
 
   balanced-match@1.0.2: {}
 
@@ -839,6 +876,8 @@ snapshots:
       resolve-pkg-maps: 1.0.0
 
   hono@4.6.10: {}
+
+  htmx@0.0.2: {}
 
   luxon@3.5.0: {}
 

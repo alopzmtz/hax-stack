@@ -11,6 +11,8 @@ const app = new Hono()
 app.use(cors())
 app.use(logger())
 
+app.use('*', serveStatic({ root: './' }))
+
 app.route('/', routes)
 
 if (import.meta.env.PROD) {

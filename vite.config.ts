@@ -1,17 +1,22 @@
 import { defineConfig } from 'vite'
-import build from '@hono/vite-build/node'
 import devServer from '@hono/vite-dev-server'
+import { resolve } from 'path'
 
 export default defineConfig({
+    root: './',
     build: {
         ssr: true,
         manifest: true,
         rollupOptions: {
-            input: 'src/index.ts',
-        }
+            input: {
+                main: resolve(__dirname, 'src/index.ts'),
+                bundle: resolve(__dirname, 'src/bundle.js')
+            }
+        },
+        outDir: resolve(__dirname, 'dist'),
+        copyPublicDir: true
     },
     plugins: [
-        // build({ entry: 'src/index.ts', minify: true }),
         devServer({ entry: 'src/index.ts' })
-    ]
+    ],
 })
