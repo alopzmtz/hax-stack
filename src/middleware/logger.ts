@@ -1,6 +1,5 @@
 import type { MiddlewareHandler } from "hono";
-import chalk from 'chalk';
-import { DateHelper, DateWrapper } from "../lib/date-helper.js";
+import { DateWrapper } from "../lib/date-helper.js";
 
 const CONFIG = {
     padding: {
@@ -23,29 +22,13 @@ export const logger = (): MiddlewareHandler => {
         const duration = `${end - start}ms`.padStart(CONFIG.padding.duration);
         const timestamp = DateWrapper.now().format();
 
-        // Color mapping
-        const methodColor = {
-            'GET': chalk.green,
-            'POST': chalk.blue,
-            'PUT': chalk.yellow,
-            'DELETE': chalk.red,
-            'PATCH': chalk.magenta,
-        }[method] || chalk.gray;
-
-        const statusColor = 
-            status >= '500' ? chalk.red :
-            status >= '400' ? chalk.yellow :
-            status >= '300' ? chalk.cyan :
-            status >= '200' ? chalk.green :
-            chalk.gray;
-
         // Build log parts
         const parts = [
-            CONFIG.timestamp ? `[${chalk.gray(timestamp)}]` : '',
-            `[${methodColor(method)}]`,
+            CONFIG.timestamp ? `[${timestamp}]` : '',
+            `[${method}]`,
             path,
-            statusColor(status),
-            chalk.gray(duration)
+            status,
+            duration
         ].filter(Boolean); // Remove empty strings if timestamp is disabled
 
         console.log(parts.join(' '));

@@ -6,6 +6,8 @@ import routes from './routes/index.js'
 import { logger } from './middleware/logger.js'
 import { serve } from '@hono/node-server'
 
+const port = 8080
+
 const app = new Hono()
 
 app.use(cors())
@@ -16,4 +18,4 @@ app.use('/favicon.ico', serveStatic({ path: './public/favicon.ico' }))
 
 app.route('/', routes)
 
-serve({ fetch: app.fetch, port: 8080 }, () => { console.log('Server is running on http://localhost:8080') })
+serve({ fetch: app.fetch, port }, () => { console.log(`Server is running on port: ${port}`) })
